@@ -9,6 +9,8 @@ app.use(morgan('tiny'));
 
 app.use(cors())
 
+app.use(express.static('build'))
+
 let people = [
     { 
       "id": 1,
@@ -31,10 +33,6 @@ let people = [
       "number": "39-23-6423122"
     }
   ]
-
-  app.get('/', (request, response) => {
-    response.send('<h1>Hello World!</h1>')
-  })
 
   app.get('/info', (request, response) => {
     const now = new Date();
